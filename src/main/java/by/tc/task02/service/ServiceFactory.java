@@ -1,0 +1,20 @@
+package by.tc.task02.service;
+
+import by.tc.task02.service.impl.EntityServiceImpl;
+
+public class ServiceFactory {
+    	private static final ServiceFactory INSTANCE = new ServiceFactory();
+
+	private final EntityService entityService = new EntityServiceImpl();
+	
+	private ServiceFactory() {}
+
+	public EntityService getEntityService() {
+
+		return entityService;
+	}
+
+	public static ServiceFactory getInstance() {
+		return INSTANCE;
+	}
+}
